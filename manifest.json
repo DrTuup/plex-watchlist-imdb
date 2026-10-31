@@ -17,6 +17,16 @@
     "https://www.imdb.com/*",
     "https://discover.provider.plex.tv/*"
   ],
+  "background": {
+    "scripts": ["src/background.js"],
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.imdb.com/title/*"],
+      "js": ["src/content.js"]
+    }
+  ],
   "action": {
     "default_title": "Add to Plex watchlist",
     "default_popup": "src/popup.html"
