@@ -5,7 +5,7 @@
   "description": "Add the IMDb movie or series you're viewing to your Plex watchlist.",
   "browser_specific_settings": {
     "gecko": {
-      "id": "plex-watchlist-imdb@local",
+      "id": "plex-watchlist-imdb@rubenclaessens.nl",
       "strict_min_version": "142.0",
       "data_collection_permissions": {
         "required": ["authenticationInfo", "websiteContent"]
@@ -15,9 +15,7 @@
   "permissions": ["storage", "activeTab", "scripting"],
   "host_permissions": [
     "https://www.imdb.com/*",
-    "https://discover.provider.plex.tv/*",
-    "https://plex.tv/*",
-    "https://app.plex.tv/*"
+    "https://discover.provider.plex.tv/*"
   ],
   "background": {
     "scripts": ["src/background.js"],
@@ -29,18 +27,8 @@
       "js": ["src/content.js"]
     }
   ],
-  "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
-  },
   "action": {
     "default_title": "Add to Plex watchlist",
-    "default_icon": {
-      "16": "icons/icon16.png",
-      "48": "icons/icon48.png",
-      "128": "icons/icon128.png"
-    },
     "default_popup": "src/popup.html"
   },
   "options_ui": {
