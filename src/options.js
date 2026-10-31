@@ -1,25 +1,39 @@
-const $ = (id) => document.getElementById(id);
-const setStatus = (text) => ($("status").textContent = text);
+import { createPin, buildAuthUrl, pollForToken } from "./lib/auth.js";
 
-async function load() {
+const $ = (id) => document.getElementById(id);
+const setStatus = (text, isError = false) => {
+  $("status").textContent = text;
+  $("status").className = isError ? "error" : "";
+};
+
+async function render() {
   const { plexToken } = await browser.storage.local.get("plexToken");
-  if (plexToken) {
-    $("token").value = plexToken;
-    setStatus("A token is saved.");
-  }
+  $("account").textContent = plexToken ? "Signed in to Plex." : "Not signed in.";
+  $("signin").hidden = !!plexToken;
+  $("signout").hidden = !plexToken;
 }
 
-$("form").addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const token = $("token").value.trim();
-  await browser.storage.local.set({ plexToken: token });
-  setStatus("Saved.");
+$("signin").addEventListener("click", async () => {
+  $("signin").disabled = true;
+  setStatus("Waiting for you to approve on Plex…");
+  try {
+    const { id, code } = await createPin();
+    await browser.tabs.create({ url: buildAuthUrl(code) });
+    const token = await pollForToken(id);
+    await browser.storage.local.set({ plexToken: token });
+    setStatus("Signed in.");
+  } catch (err) {
+    setStatus(err.message, true);
+  } finally {
+    $("signin").disabled = false;
+    render();
+  }
 });
 
-$("clear").addEventListener("click", async () => {
+$("signout").addEventListener("click", async () => {
   await browser.storage.local.remove("plexToken");
-  $("token").value = "";
-  setStatus("Token cleared.");
+  setStatus("Signed out.");
+  render();
 });
 
-load();
+render();

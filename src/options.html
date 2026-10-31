@@ -8,19 +8,16 @@
   <body>
     <main>
       <h1>Plex Watchlist Settings</h1>
-      <form id="form">
-        <label for="token">Plex token</label>
-        <input id="token" type="password" autocomplete="off" required />
-        <p class="muted">
-          Find it in Plex Web: open any item, choose "Get Info" → "View XML", and copy the
-          <code>X-Plex-Token</code> value from the URL. The token is stored locally in Firefox and never synced.
-        </p>
-        <div class="row">
-          <button type="submit">Save</button>
-          <button type="button" id="clear">Clear token</button>
-        </div>
-        <p id="status" role="status"></p>
-      </form>
+      <p id="account" class="muted">Not signed in.</p>
+      <div class="row">
+        <button type="button" id="signin">Sign in with Plex</button>
+        <button type="button" id="signout" hidden>Sign out</button>
+      </div>
+      <p class="muted">
+        Opens Plex's sign-in page in a new tab. Approve the request there, then come back to this page.
+        The token is stored locally in Firefox and is never synced.
+      </p>
+      <p id="status" role="status"></p>
     </main>
     <script type="module" src="options.js"></script>
   </body>

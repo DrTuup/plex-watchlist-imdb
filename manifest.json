@@ -15,7 +15,9 @@
   "permissions": ["storage", "activeTab", "scripting"],
   "host_permissions": [
     "https://www.imdb.com/*",
-    "https://discover.provider.plex.tv/*"
+    "https://discover.provider.plex.tv/*",
+    "https://plex.tv/*",
+    "https://app.plex.tv/*"
   ],
   "background": {
     "scripts": ["src/background.js"],
@@ -27,8 +29,18 @@
       "js": ["src/content.js"]
     }
   ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
   "action": {
     "default_title": "Add to Plex watchlist",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
     "default_popup": "src/popup.html"
   },
   "options_ui": {
