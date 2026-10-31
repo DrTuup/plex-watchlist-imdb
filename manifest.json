@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Plex Watchlist for IMDb",
+  "version": "0.1.0",
+  "description": "Add the IMDb movie or series you're viewing to your Plex watchlist.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "plex-watchlist-imdb@local",
+      "strict_min_version": "128.0"
+    }
+  },
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": [
+    "https://www.imdb.com/*",
+    "https://discover.provider.plex.tv/*"
+  ],
+  "action": {
+    "default_title": "Add to Plex watchlist",
+    "default_popup": "src/popup.html"
+  },
+  "options_ui": {
+    "page": "src/options.html",
+    "open_in_tab": true
+  }
+}

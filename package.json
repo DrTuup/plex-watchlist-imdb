@@ -1,0 +1,13 @@
+{
+  "name": "plex-watchlist-ext",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Firefox extension that adds IMDb titles to your Plex watchlist",
+  "scripts": {
+    "test": "bun test",
+    "run:firefox": "bunx web-ext run --source-dir .",
+    "lint": "bunx web-ext lint --source-dir .",
+    "package": "bunx web-ext build --source-dir . --artifacts-dir dist --overwrite-dest"
+  }
+}
