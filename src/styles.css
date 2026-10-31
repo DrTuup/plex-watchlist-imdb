@@ -1,21 +1,71 @@
 body {
-  font-family: system-ui, sans-serif;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
   margin: 0;
   color: #1c1b22;
   background: #fff;
 }
 @media (prefers-color-scheme: dark) {
   body { color: #fbfbfe; background: #1c1b22; }
-  button, input { background: #2b2a33; color: #fbfbfe; border-color: #5b5b66; }
+  button.secondary { background: #2b2a33; color: #fbfbfe; border-color: #5b5b66; }
+  .card { background: #2b2a33; border-color: #3a3945; }
+  .badge { background: #3a3945; }
 }
 main { padding: 12px 16px; width: 300px; }
-body:has(form) main { width: auto; max-width: 520px; }
 h1 { font-size: 1.1rem; margin: 0 0 4px; }
+h2 { font-size: 0.95rem; margin: 0 0 6px; }
 .muted { color: #6b6b75; font-size: 0.85rem; }
+.small { font-size: 0.78rem; }
 .error { color: #c42b1c; }
-button { padding: 6px 12px; margin-top: 8px; cursor: pointer; }
-button:disabled { opacity: 0.6; cursor: default; }
-input { display: block; width: 100%; box-sizing: border-box; padding: 6px; margin: 4px 0 8px; }
-label { font-weight: 600; }
-.row { display: flex; gap: 8px; }
 a { color: #0060df; }
+button { padding: 6px 12px; margin-top: 8px; cursor: pointer; font: inherit; }
+button:disabled { opacity: 0.6; cursor: default; }
+
+/* Options page */
+body.options { background: #f4f4f7; }
+@media (prefers-color-scheme: dark) { body.options { background: #15141a; } }
+body.options main {
+  width: auto;
+  max-width: 480px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+.card {
+  background: #fff;
+  border: 1px solid #e0e0e6;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+.brand { display: flex; gap: 12px; align-items: center; margin-bottom: 20px; }
+.brand h1 { font-size: 1.25rem; }
+.brand p { margin: 2px 0 0; }
+.badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #ececf1;
+  margin-bottom: 8px;
+}
+.account p { margin: 0 0 4px; }
+.actions { display: flex; gap: 8px; margin-top: 12px; }
+button.primary {
+  background: #e5a00d;
+  color: #1f1f1f;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-weight: 600;
+}
+button.secondary {
+  background: #fff;
+  color: #1c1b22;
+  border: 1px solid #c8c8d0;
+  border-radius: 999px;
+  padding: 10px 20px;
+}
+.status { min-height: 1.2em; font-size: 0.9rem; margin: 10px 0 0; }
+.steps { margin-top: 24px; padding-top: 16px; border-top: 1px solid #ececf1; }
+.steps ol { margin: 0; padding-left: 20px; font-size: 0.9rem; line-height: 1.5; }
+footer { margin-top: 20px; padding-top: 12px; border-top: 1px solid #ececf1; }

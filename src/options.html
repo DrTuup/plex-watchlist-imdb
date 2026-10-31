@@ -5,19 +5,39 @@
     <title>Plex Watchlist Settings</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <main>
-      <h1>Plex Watchlist Settings</h1>
-      <p id="account" class="muted">Not signed in.</p>
-      <div class="row">
-        <button type="button" id="signin">Sign in with Plex</button>
-        <button type="button" id="signout" hidden>Sign out</button>
-      </div>
-      <p class="muted">
-        Opens Plex's sign-in page in a new tab. Approve the request there, then come back to this page.
-        The token is stored locally in Firefox and is never synced.
-      </p>
-      <p id="status" role="status"></p>
+  <body class="options">
+    <main class="card">
+      <header class="brand">
+        <img src="../icons/icon48.png" alt="" width="40" height="40" />
+        <div>
+          <h1>Plex Watchlist for IMDb</h1>
+          <p class="muted">Connect your Plex account to add IMDb titles to your watchlist.</p>
+        </div>
+      </header>
+
+      <section class="account">
+        <div class="badge" id="badge">Not connected</div>
+        <p id="account" class="muted">Sign in once. You won't need to do this again unless you sign out.</p>
+        <div class="actions">
+          <button type="button" id="signin" class="primary">Sign in with Plex</button>
+          <button type="button" id="signout" class="secondary" hidden>Sign out</button>
+        </div>
+        <p id="status" role="status" class="status"></p>
+      </section>
+
+      <section class="steps">
+        <h2>How it works</h2>
+        <ol>
+          <li>Click <strong>Sign in with Plex</strong>. A Plex sign-in page opens in a new tab.</li>
+          <li>Sign in and approve the request on Plex. Your password never touches this extension.</li>
+          <li>Come back here. You're connected, and the button appears on IMDb title pages.</li>
+        </ol>
+      </section>
+
+      <footer class="muted small">
+        Your Plex token is stored only in Firefox on this device and is sent only to Plex.
+        <a href="../PRIVACY.md" target="_blank" rel="noopener">Privacy policy</a>
+      </footer>
     </main>
     <script type="module" src="options.js"></script>
   </body>
