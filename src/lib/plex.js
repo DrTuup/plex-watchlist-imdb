@@ -16,6 +16,7 @@ export async function searchPlex(token, query) {
   url.searchParams.set("query", query);
   url.searchParams.set("limit", "30");
   url.searchParams.set("searchTypes", "movies,tv");
+  url.searchParams.set("searchProviders", "discover,plexAvailable");
   url.searchParams.set("includeMetadata", "1");
 
   const res = await fetch(url, { headers: headers(token) });
