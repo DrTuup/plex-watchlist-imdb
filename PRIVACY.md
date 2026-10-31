@@ -1,6 +1,6 @@
 # Privacy Policy: Plex Watchlist for IMDb
 
-Last updated: [DATE]
+Last updated: 31-10-2026
 
 Plex Watchlist for IMDb ("the extension") adds IMDb movies and series to your Plex watchlist. This policy explains what data the extension handles and where it goes.
 
@@ -23,7 +23,7 @@ The extension talks only to these Plex services, and only when you use it:
 - `plex.tv` and `app.plex.tv`: to sign you in.
 - `discover.provider.plex.tv`: to search for the title and add it to your watchlist.
 
-Requests to these services are governed by Plex's own privacy policy: https://www.plex.tv/about/privacy-legal/
+Requests to these services are governed by Plex's own privacy policy: <https://www.plex.tv/about/privacy-legal/>
 
 No other servers receive data from the extension.
 
@@ -41,4 +41,4 @@ If this policy changes, the new version will be published in this file and the "
 
 ## Contact
 
-Questions about this policy: open an issue at https://github.com/drtuup/plex-watchlist-imdb/issues
+Questions about this policy: open an issue at <https://github.com/drtuup/plex-watchlist-imdb/issues>
