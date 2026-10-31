@@ -22,6 +22,10 @@ Then open the extension's Settings and paste your Plex token. To find it in Plex
 
 The Plex endpoints are undocumented and may change. If adding starts failing, check the request shapes in `src/lib/plex.js` first.
 
+## License
+
+MIT. See [LICENSE](LICENSE).
+
 ## Packaging
 
 `bun run package` builds a zip in `dist/`.
