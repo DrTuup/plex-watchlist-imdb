@@ -41,4 +41,4 @@ If this policy changes, the new version will be published in this file and the "
 
 ## Contact
 
-Questions about this policy: [YOUR EMAIL OR GITHUB ISSUES URL]
+Questions about this policy: open an issue at https://github.com/drtuup/plex-watchlist-imdb/issues
